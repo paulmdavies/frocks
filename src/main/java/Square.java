@@ -8,4 +8,8 @@ public class Square {
     public boolean hasCollectible() {
         return hasCollectible;
     }
+
+    public void visit() {
+        this.hasCollectible = false;
+    }
 }
