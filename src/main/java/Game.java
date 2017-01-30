@@ -6,6 +6,6 @@ public class Game {
     }
 
     public boolean win() {
-        return !board.hasGoldRemaining();
+        return !board.hasCollectibleRemaining();
     }
 }

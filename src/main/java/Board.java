@@ -8,7 +8,7 @@ public class Board {
         this.squares = squares;
     }
 
-    public boolean hasGoldRemaining() {
-        return squares.stream().anyMatch(square -> square.hasGold());
+    public boolean hasCollectibleRemaining() {
+        return squares.stream().anyMatch(square -> square.hasCollectible());
     }
 }

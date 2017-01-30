@@ -1,11 +1,11 @@
 public class Square {
-    private boolean hasGold;
+    private boolean hasCollectible;
 
-    public Square(boolean hasGold) {
-        this.hasGold = hasGold;
+    public Square(boolean hasCollectible) {
+        this.hasCollectible = hasCollectible;
     }
 
-    public boolean hasGold() {
-        return hasGold;
+    public boolean hasCollectible() {
+        return hasCollectible;
     }
 }
