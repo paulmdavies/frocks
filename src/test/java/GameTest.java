@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class GameTest extends TestCase {
     public void testShouldWinIfNoCollectiblesAreRemaining() {
-        Game game = new Game(new Board(Arrays.asList(new Square(SquareContents.NOTHING))));
+        Game game = new Game(new Board(Arrays.asList(new Square(SquareContents.EMPTY))));
         assertTrue(game.win());
     }
 

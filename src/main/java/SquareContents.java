@@ -1,5 +1,5 @@
 public enum SquareContents {
-    NOTHING,
+    EMPTY,
     COLLECTIBLE,
     WALL
 }

@@ -11,7 +11,7 @@ public class Square {
 
     public void visit() {
         if (contents == SquareContents.COLLECTIBLE) {
-            contents = SquareContents.NOTHING;
+            contents = SquareContents.EMPTY;
         }
     }
 

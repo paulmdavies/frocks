@@ -15,7 +15,7 @@ public class SquareTest extends TestCase {
 
     public void testSquareShouldBeVisitableIfItIsEmpty() {
         // Given
-        Square square = new Square(SquareContents.NOTHING);
+        Square square = new Square(SquareContents.EMPTY);
 
         // Then
         assertTrue(square.visitable());
