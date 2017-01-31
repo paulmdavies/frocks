@@ -1,8 +1,10 @@
 public class Square {
     private boolean hasCollectible;
+    private boolean hasWall;
 
-    public Square(boolean hasCollectible) {
+    public Square(boolean hasCollectible, boolean hasWall) {
         this.hasCollectible = hasCollectible;
+        this.hasWall = hasWall;
     }
 
     public boolean hasCollectible() {
@@ -11,5 +13,9 @@ public class Square {
 
     public void visit() {
         this.hasCollectible = false;
+    }
+
+    public boolean visitable() {
+        return !hasWall;
     }
 }
