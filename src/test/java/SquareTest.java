@@ -4,7 +4,7 @@ public class SquareTest extends TestCase {
 
     public void testShouldCollectCollectibleWhenVisitingASquare() {
         // Given
-        Square square = new Square(true, false);
+        Square square = new Square(SquareContents.COLLECTIBLE);
 
         // When
         square.visit();
@@ -13,9 +13,17 @@ public class SquareTest extends TestCase {
         assertFalse(square.hasCollectible());
     }
 
-    public void testSquareShouldBeVisitableIfItDoesNotContainAWall() {
+    public void testSquareShouldBeVisitableIfItIsEmpty() {
         // Given
-        Square square = new Square(false, false);
+        Square square = new Square(SquareContents.NOTHING);
+
+        // Then
+        assertTrue(square.visitable());
+    }
+
+    public void testSquareShouldBeVisitableIfItContainsACollectible() {
+        // Given
+        Square square = new Square(SquareContents.COLLECTIBLE);
 
         // Then
         assertTrue(square.visitable());
@@ -23,7 +31,7 @@ public class SquareTest extends TestCase {
 
     public void testSquareShouldNotBeVisitableIfItContainsAWall() {
         // Given
-        Square square = new Square(false, true);
+        Square square = new Square(SquareContents.WALL);
 
         // Then
         assertFalse(square.visitable());

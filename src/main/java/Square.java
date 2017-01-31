@@ -1,21 +1,21 @@
 public class Square {
-    private boolean hasCollectible;
-    private boolean hasWall;
+    private SquareContents contents;
 
-    public Square(boolean hasCollectible, boolean hasWall) {
-        this.hasCollectible = hasCollectible;
-        this.hasWall = hasWall;
+    public Square(SquareContents contents) {
+        this.contents = contents;
     }
 
     public boolean hasCollectible() {
-        return hasCollectible;
+        return contents == SquareContents.COLLECTIBLE;
     }
 
     public void visit() {
-        this.hasCollectible = false;
+        if (contents == SquareContents.COLLECTIBLE) {
+            contents = SquareContents.NOTHING;
+        }
     }
 
     public boolean visitable() {
-        return !hasWall;
+        return contents != SquareContents.WALL;
     }
 }
