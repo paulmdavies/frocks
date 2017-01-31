@@ -36,4 +36,26 @@ public class SquareTest extends TestCase {
         // Then
         assertFalse(square.visitable());
     }
+
+    public void testSquareShouldContainManAfterVisit() {
+        // Given
+        Square square = new Square(SquareContents.EMPTY);
+
+        // When
+        square.visit();
+
+        // Then
+        assertTrue(square.hasMan());
+    }
+
+    public void testSquareShouldNotContainManAfterLeaving() {
+        // Given
+        Square square = new Square(SquareContents.MAN);
+
+        // When
+        square.leave();
+
+        // Then
+        assertFalse(square.hasMan());
+    }
 }

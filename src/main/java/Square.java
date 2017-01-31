@@ -10,12 +10,18 @@ public class Square {
     }
 
     public void visit() {
-        if (contents == SquareContents.COLLECTIBLE) {
-            contents = SquareContents.EMPTY;
-        }
+        contents = SquareContents.MAN;
     }
 
     public boolean visitable() {
         return contents != SquareContents.WALL;
+    }
+
+    public boolean hasMan() {
+        return contents == SquareContents.MAN;
+    }
+
+    public void leave() {
+        contents = SquareContents.EMPTY;
     }
 }
