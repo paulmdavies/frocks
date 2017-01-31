@@ -21,4 +21,12 @@ public class BoardTest extends TestCase {
         } catch (Exception e) {
         }
     }
+
+    public void testShouldFailBoardConstructionIfMoreThanONeSquareContainsAMan() {
+        try {
+            new Board(Arrays.asList(new Square(SquareContents.MAN), new Square(SquareContents.MAN)));
+            fail("Expected Exception to be thrown");
+        } catch (Exception e) {
+        }
+    }
 }
