@@ -3,13 +3,13 @@ import junit.framework.TestCase;
 import java.util.Arrays;
 
 public class GameTest extends TestCase {
-    public void testShouldWinIfNoCollectiblesAreRemaining() {
-        Game game = new Game(new Board(Arrays.asList(new Square(SquareContents.EMPTY))));
+    public void testShouldWinIfNoCollectiblesAreRemaining() throws Exception {
+        Game game = new Game(new Board(Arrays.asList(new Square(SquareContents.MAN))));
         assertTrue(game.win());
     }
 
-    public void testShouldNotWinIfCollectiblesAreRemaining() {
-        Game game = new Game(new Board(Arrays.asList(new Square(SquareContents.COLLECTIBLE))));
+    public void testShouldNotWinIfCollectiblesAreRemaining() throws Exception {
+        Game game = new Game(new Board(Arrays.asList(new Square(SquareContents.COLLECTIBLE), new Square(SquareContents.MAN))));
         assertFalse(game.win());
     }
 }
