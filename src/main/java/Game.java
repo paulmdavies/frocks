@@ -8,4 +8,8 @@ public class Game {
     public boolean win() {
         return !board.hasCollectibleRemaining();
     }
+
+    public void move() {
+        board.move();
+    }
 }

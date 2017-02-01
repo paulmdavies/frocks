@@ -13,4 +13,9 @@ public class Board {
     public boolean hasCollectibleRemaining() {
         return squares.stream().anyMatch(square -> square.hasCollectible());
     }
+
+    public void move() {
+        squares.get(0).leave();
+        squares.get(1).visit();
+    }
 }
